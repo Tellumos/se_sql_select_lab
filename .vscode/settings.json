@@ -1,0 +1,6 @@
+{
+    "python.defaultInterpreterPath": "/home/msv93/.local/share/virtualenvs/se_sql_select_lab-hQPhOyru/bin/python",
+    "python.analysis.extraPaths": [
+        "./"
+    ]
+}
