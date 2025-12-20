@@ -8,10 +8,6 @@ import pandas as pd
 # Connect to the database
 conn = sqlite3.connect('data.sqlite')
 
-employee_data = pd.read_sql("""SELECT * FROM employees""", conn)
-print("---------------------Employee Data---------------------")
-print(employee_data)
-print("-------------------End Employee Data-------------------")
 # STEP 2
 # Replace None with your code
 df_first_five = pd.read_sql("""SELECT employeeNumber, lastName FROM employees""", conn)
@@ -40,13 +36,9 @@ df_short_title = pd.read_sql("""SELECT substr(jobTitle, 1, 2) AS short_title FRO
 # Replace None with your code
 sum_total_price = pd.read_sql("""SELECT round(priceEach * quantityOrdered) FROM orderDetails""", conn).sum()
 
-order_details = pd.read_sql("""SELECT * FROM orderDetails;""", conn) 
-print("------------------Order Details Data------------------")
-print(order_details)
-print("----------------End Order Details Data----------------")
-
 # STEP 9
 # Replace None with your code
-df_day_month_year = pd.read_sql("""SELECT orderDate, strftime("%d", orderDate) AS day, strftime("%m", orderDate) AS month, strftime("%Y", orderDate) AS year FROM orderDetails""", conn)
+df_day_month_year = pd.read_sql("""SELECT orderDate, strftime("%d", orderDate) AS day, strftime("%m", orderDate) AS month, strftime("%Y", orderDate) AS year FROM orders""", conn)
 
 conn.close()
+
